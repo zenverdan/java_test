@@ -6,10 +6,14 @@ class http_json{
     public static void main(String[] argv){
         String new_data = get_data("http://127.0.0.1:8080");
 
-        JSONObject js  = new JSONObject(new_data);
-
-        String name = js.getString("name");
-        System.out.println(name);
+        //JSONObject js  = new JSONObject(new_data);
+        JSONArray js = new JSONArray(new_data);
+        
+        //String name = js.getString("name")[0];
+        int a = js.length();
+        System.out.println(js.getJSONObject(1));
+        System.out.println(a);
+        
     }
 
     //get request to server
